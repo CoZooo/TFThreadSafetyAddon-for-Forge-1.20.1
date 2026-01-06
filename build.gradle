@@ -32,7 +32,7 @@ dependencies {
     }
     neoForge "net.neoforged:neoforge:${project.forge_version}"
 
-    modImplementation "team-twilight:twilightforest:4.7.3032:universal"
+    modImplementation "team-twilight:twilightforest:4.8.3287:universal"
 }
 
 processResources {

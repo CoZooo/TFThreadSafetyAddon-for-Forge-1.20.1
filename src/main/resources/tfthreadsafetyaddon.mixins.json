@@ -7,12 +7,10 @@
     "MixinBiomeDensitySource",
     "MixinLazyArea",
     "MixinLazyAreaContext",
-    "MixinMinotaurMazeComponent",
     "MixinNoiseChunkGenerator",
     "MixinNoiseDensityRouter",
     "MixinTerrainDensityRouter",
-    "MixinTFBiomeProvider",
-    "MixinTFMaze"
+    "MixinTFBiomeProvider"
   ],
   "client": [
   ],
