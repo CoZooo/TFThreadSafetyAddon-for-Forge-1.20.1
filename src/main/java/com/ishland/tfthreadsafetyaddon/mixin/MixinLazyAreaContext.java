@@ -3,8 +3,8 @@ package com.ishland.tfthreadsafetyaddon.mixin;
 import com.ishland.tfthreadsafetyaddon.common.ducks.LazyAreaExtension;
 import com.llamalad7.mixinextras.injector.ModifyReturnValue;
 import it.unimi.dsi.fastutil.longs.Long2ObjectLinkedOpenHashMap;
-import net.minecraft.registry.RegistryKey;
-import net.minecraft.world.biome.Biome;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.world.level.biome.Biome;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -12,10 +12,10 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import twilightforest.world.components.layer.vanillalegacy.area.LazyArea;
 import twilightforest.world.components.layer.vanillalegacy.context.LazyAreaContext;
 
-@Mixin(LazyAreaContext.class)
+@Mixin(value = LazyAreaContext.class, remap = false)
 public class MixinLazyAreaContext {
 
-    private Long2ObjectLinkedOpenHashMap<RegistryKey<Biome>> tfthreadsafetyaddon$cache;
+    private Long2ObjectLinkedOpenHashMap<ResourceKey<Biome>> tfthreadsafetyaddon$cache;
 
     @Inject(method = "<init>", at = @At("RETURN"))
     private void onInit(int maxCache, long salt, CallbackInfo ci) {
